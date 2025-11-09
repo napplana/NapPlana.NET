@@ -14,9 +14,9 @@ public class VideoMessageData : MessageDataBase
     [JsonPropertyName("file_unique")] public string? FileUnique { get; set; }
 }
 
-public class VideoMessage : IMessageData
+public class VideoMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Video;
-    public MessageDataBase MessageData { get;set; } = new VideoMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Video;
+    public override MessageDataBase MessageData { get;set; } = new VideoMessageData();
 }
 

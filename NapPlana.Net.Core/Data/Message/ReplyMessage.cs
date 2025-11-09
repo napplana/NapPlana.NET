@@ -7,9 +7,9 @@ public class ReplyMessageData : MessageDataBase
     [JsonPropertyName("id")] public string Id { get; set; } = string.Empty;
 }
 
-public class ReplyMessage : IMessageData
+public class ReplyMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Reply;
-    public MessageDataBase MessageData { get;set; } = new ReplyMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Reply;
+    public override MessageDataBase MessageData { get;set; } = new ReplyMessageData();
 }
 

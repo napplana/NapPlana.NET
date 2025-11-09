@@ -2,12 +2,12 @@
 
 namespace NapPlana.Core.Data.Message;
 
-public interface IMessageData
+public class Message
 {
     [JsonPropertyName("type")]
-    public abstract MessageDataType MessageType { get; set; }
+    public virtual MessageDataType MessageType { get; set; }
     
-    public abstract MessageDataBase MessageData { get; set; }
+    public virtual MessageDataBase MessageData { get; set; }
 }
 
 /// <summary>

@@ -14,10 +14,6 @@ var bot = BotFactory
     .Build();
 BotEventHandler.OnLogReceived += (level, message) =>
 {
-    if (level == LogLevel.Debug)
-    {
-        return;
-    }
     Console.WriteLine($"[{level}] {message}");
 };
 

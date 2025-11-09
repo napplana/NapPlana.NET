@@ -8,9 +8,9 @@ public class JsonMessageData : MessageDataBase
     [JsonPropertyName("data")] public string DataContent { get; set; } = string.Empty;
 }
 
-public class JsonMessage : IMessageData
+public class JsonMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Json;
-    public MessageDataBase MessageData { get; set;} = new JsonMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Json;
+    public override MessageDataBase MessageData { get; set;} = new JsonMessageData();
 }
 

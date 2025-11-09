@@ -8,9 +8,9 @@ public class RpsMessageData : MessageDataBase
     [JsonPropertyName("result")] public string? Result { get; set; }
 }
 
-public class RpsMessage : IMessageData
+public class RpsMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Rps;
-    public MessageDataBase MessageData { get; set;} = new RpsMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Rps;
+    public override MessageDataBase MessageData { get; set;} = new RpsMessageData();
 }
 

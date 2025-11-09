@@ -8,8 +8,8 @@ public class TextMessageData: MessageDataBase
     public String Text { get; set; } = String.Empty;
 }
 
-public class TextMessage : IMessageData
+public class TextMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Text;
-    public MessageDataBase MessageData { get;set; } = new TextMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Text;
+    public override MessageDataBase MessageData { get;set; } = new TextMessageData();
 }

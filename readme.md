@@ -1,4 +1,4 @@
 # NapPlana.NET
-> A simple NapCat implementation of .NET
+> A simple NapCat SDK for .NET
 
 开发中

@@ -18,9 +18,9 @@ public class MusicMessageData : MessageDataBase
     [JsonPropertyName("singer")] public string? Singer { get; set; }
 }
 
-public class MusicMessage : IMessageData
+public class MusicMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Music;
-    public MessageDataBase MessageData { get;set; } = new MusicMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Music;
+    public override MessageDataBase MessageData { get;set; } = new MusicMessageData();
 }
 

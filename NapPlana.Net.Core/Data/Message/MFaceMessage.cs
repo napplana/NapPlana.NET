@@ -10,9 +10,9 @@ public class MFaceMessageData : MessageDataBase
     [JsonPropertyName("summary")] public string? Summary { get; set; }
 }
 
-public class MFaceMessage : IMessageData
+public class MFaceMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.MFace;
-    public MessageDataBase MessageData { get; set;} = new MFaceMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.MFace;
+    public override MessageDataBase MessageData { get; set;} = new MFaceMessageData();
 }
 

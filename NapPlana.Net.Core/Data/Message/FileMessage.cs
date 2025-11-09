@@ -13,8 +13,8 @@ public class FileMessageData : MessageDataBase
     [JsonPropertyName("file_unique")] public string? FileUnique { get; set; }
 }
 
-public class FileMessage : IMessageData
+public class FileMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.File;
-    public MessageDataBase MessageData { get; set;} = new FileMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.File;
+    public override MessageDataBase MessageData { get; set;} = new FileMessageData();
 }

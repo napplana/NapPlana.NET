@@ -8,9 +8,9 @@ public class AtMessageData : MessageDataBase
     [JsonPropertyName("qq")] public string Qq { get; set; } = string.Empty;
 }
 
-public class AtMessage : IMessageData
+public class AtMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.At;
-    public MessageDataBase MessageData { get; set;} = new AtMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.At;
+    public override MessageDataBase MessageData { get; set;} = new AtMessageData();
 }
 

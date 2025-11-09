@@ -13,9 +13,9 @@ public class RecordMessageData : MessageDataBase
     [JsonPropertyName("file_unique")] public string? FileUnique { get; set; }
 }
 
-public class RecordMessage : IMessageData
+public class RecordMessage : Message
 {
-    public MessageDataType MessageType { get; set; } = MessageDataType.Record;
-    public MessageDataBase MessageData { get;set; } = new RecordMessageData();
+    public override MessageDataType MessageType { get; set; } = MessageDataType.Record;
+    public override MessageDataBase MessageData { get;set; } = new RecordMessageData();
 }
 
