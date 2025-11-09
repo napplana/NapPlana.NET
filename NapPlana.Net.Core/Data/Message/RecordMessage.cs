@@ -1,0 +1,21 @@
+﻿using System.Text.Json.Serialization;
+
+namespace NapPlana.Core.Data.Message;
+
+public class RecordMessageData : MessageDataBase
+{
+    [JsonPropertyName("file")] public string File { get; set; } = string.Empty;
+    [JsonPropertyName("name")] public string? Name { get; set; }
+    [JsonPropertyName("url")] public string? Url { get; set; }
+    [JsonPropertyName("path")] public string? Path { get; set; }
+    [JsonPropertyName("file_id")] public string? FileId { get; set; }
+    [JsonPropertyName("file_size")] public string? FileSize { get; set; }
+    [JsonPropertyName("file_unique")] public string? FileUnique { get; set; }
+}
+
+public class RecordMessage : IMessageData
+{
+    public MessageDataType MessageType { get; set; } = MessageDataType.Record;
+    public MessageDataBase MessageData { get;set; } = new RecordMessageData();
+}
+

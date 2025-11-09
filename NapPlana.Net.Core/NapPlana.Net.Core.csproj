@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>NapPlana.Net.Core</AssemblyName>
+        <RootNamespace>NapPlana.Core</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="API\" />
+      <Folder Include="Connections\Http\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="TouchSocket" Version="4.0.0-rc.5" />
+      <PackageReference Include="TouchSocket.Http" Version="4.0.0-rc.5" />
+    </ItemGroup>
+
+</Project>
