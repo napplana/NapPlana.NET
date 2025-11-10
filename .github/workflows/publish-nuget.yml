@@ -30,4 +30,4 @@ jobs:
       - name: Publish the package to Github Packages
         run: dotnet nuget push ./NapPlana.Net.Core/bin/Release/*.nupkg --api-key ${{ secrets.TOKEN }} --source github --skip-duplicate
       - name: Publish the package to Nuget Gallery
-        run: dotnet nuget push ./NapPlana.Net.Core/Release/*.nupkg --api-key ${{ secrets.NUGET_GALLERY_TOKEN }}  --source nuget.org --skip-duplicate
+        run: dotnet nuget push ./NapPlana.Net.Core/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_GALLERY_TOKEN }}  --source nuget.org --skip-duplicate
