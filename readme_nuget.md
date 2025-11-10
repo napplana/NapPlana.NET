@@ -1,4 +1,4 @@
-![nuget](https://moss-1309278520.cos.ap-shanghai.myqcloud.com/plana.gif)
+![nuget](https://i.imgur.com/53CmM9e.png)
 # NapPlana.NET
 
 _Yet Another NapCat Framework SDK for .NET_
@@ -7,7 +7,9 @@ _Yet Another NapCat Framework SDK for .NET_
 > 
 > A new logo now in progress...
 
-
+| Nuget                                                 | License | Workflow                                                                                                | Name Inspired By                                    | Github                                                                     |
+|-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------------------------------|
+| ![nuget](https://img.shields.io/nuget/v/NapPlana.NET) | ![](https://img.shields.io/github/license/stevesensei/NapPlana.NET)   | ![wf](https://img.shields.io/github/actions/workflow/status/stevesensei/NapPlana.NET/publish-nuget.yml) | ![](https://img.shields.io/badge/Blue-Archive-cyan) | ![last](https://img.shields.io/github/last-commit/stevesensei/NapPlana.NET) |
 ## 欢迎
 
 这是一个.NET 平台下的[NapCat](https://github.com/NapNeko/NapCatQQ/)框架的SDK实现，旨在为开发者提供在.NET平台下开发QQ机器人的又一个解决方案。

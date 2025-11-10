@@ -10,6 +10,10 @@ _Yet Another NapCat Framework SDK for .NET_
 > 
 > A new logo now in progress...
 
+| Nuget                                                 | License | Workflow                                                                                                | Name Inspired By                                    | Github                                                                     |
+|-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------------------------------|
+| ![nuget](https://img.shields.io/nuget/v/NapPlana.NET) | ![](https://img.shields.io/github/license/stevesensei/NapPlana.NET)   | ![wf](https://img.shields.io/github/actions/workflow/status/stevesensei/NapPlana.NET/publish-nuget.yml) | ![](https://img.shields.io/badge/Blue-Archive-cyan) | ![last](https://img.shields.io/github/last-commit/stevesensei/NapPlana.NET) |
+
 </div>
 
 ## 欢迎
