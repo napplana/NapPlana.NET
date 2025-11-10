@@ -1,4 +1,4 @@
-﻿{
+{
   "repo_notes": [
     {
       "content": ""
@@ -290,7 +290,7 @@
     },
     {
       "title": "Building from Source",
-      "purpose": "Explain how to clone the repository, restore dependencies, build, and run the example project",
+      "purpose": "Explain how to clone the repository1, restore dependencies, build, and run the example project",
       "parent": "Development",
       "page_notes": [
         {
