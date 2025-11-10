@@ -1,0 +1,302 @@
+﻿{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "Introduce NapPlana.NET, explaining it is a .NET SDK for the NapCat QQ bot framework, its purpose, key features, and high-level architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Guide users through initial setup and first bot creation",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Installation",
+      "purpose": "Explain how to install NapPlana.NET from NuGet, including prerequisites (NapCat server, .NET 9.0, TouchSocket dependencies)",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Quick Start Example",
+      "purpose": "Walk through a complete working example of creating a bot, connecting, and sending a message",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Configuration",
+      "purpose": "Detail how to configure bot connection parameters (IP, port, token, connection type)",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Core Concepts",
+      "purpose": "Explain the fundamental concepts and patterns used throughout the SDK",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Bot Lifecycle",
+      "purpose": "Explain bot creation with BotFactory, initialization, operation, and shutdown phases",
+      "parent": "Core Concepts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Connection Types",
+      "purpose": "Describe the four connection types (WebSocketClient, WebSocketServer, HttpClient, HttpServer) and when to use each",
+      "parent": "Core Concepts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Event Handling",
+      "purpose": "Explain the BotEventHandler system, event types, and how to subscribe to events",
+      "parent": "Core Concepts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Request-Response Pattern",
+      "purpose": "Explain the Echo-based correlation mechanism, ApiHandler, and the polling pattern for asynchronous responses",
+      "parent": "Core Concepts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Building Messages",
+      "purpose": "Guide for constructing messages to send through the bot",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "MessageChainBuilder",
+      "purpose": "Explain the fluent MessageChainBuilder API for constructing complex multi-part messages",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Message Types Reference",
+      "purpose": "Comprehensive reference of all message types (Text, Image, At, Reply, Audio, Video, File, etc.)",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Text and Mention Messages",
+      "purpose": "Detail text messages and mention/at messages for tagging users",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Media Messages",
+      "purpose": "Explain image, audio/record, video, and file messages with various input formats",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Structured Messages",
+      "purpose": "Describe reply, forward, node, JSON, and contact messages for complex interactions",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Interactive Messages",
+      "purpose": "Cover music, dice, MFace, and other interactive/fun message types",
+      "parent": "Building Messages",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "API Reference",
+      "purpose": "Detailed API documentation for all public classes, methods, and types",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "BotFactory",
+      "purpose": "Document BotFactory methods for creating and configuring bot instances",
+      "parent": "API Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Bot Operations",
+      "purpose": "Document NapBot methods including SendGroupMessageAsync, SendPokeAsync, StartAsync, StopAsync",
+      "parent": "API Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "API Data Structures",
+      "purpose": "Document request and response data structures like GroupMessageSend, GroupMessageSendResponseData, PokeMessageSend",
+      "parent": "API Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Enumerations",
+      "purpose": "Complete reference of all enumerations: EventType, NoticeType, MessageType, ApiActionType, LogLevel, etc.",
+      "parent": "API Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "BotEventHandler",
+      "purpose": "Document the static BotEventHandler class and all available events (OnLogReceived, OnMessageSentGroup, etc.)",
+      "parent": "API Reference",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Advanced Topics",
+      "purpose": "In-depth coverage of advanced usage patterns and customization",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Connection Architecture",
+      "purpose": "Explain ConnectionBase abstraction and how connections are implemented internally",
+      "parent": "Advanced Topics",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "WebSocket Plugins",
+      "purpose": "Explain WebSocketAuthPlugin and WebSocketMessageReceiverPlugin, and how the plugin system works with TouchSocket",
+      "parent": "Advanced Topics",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Response Handling Internals",
+      "purpose": "Deep dive into ApiHandler, WsGlobalRequest, ActionResponse, and the Echo correlation mechanism",
+      "parent": "Advanced Topics",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "TouchSocket Integration",
+      "purpose": "Explain the dependency on TouchSocket library and how it's used for network communication",
+      "parent": "Advanced Topics",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Development",
+      "purpose": "Information for contributors and those building from source",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Building from Source",
+      "purpose": "Explain how to clone the repository, restore dependencies, build, and run the example project",
+      "parent": "Development",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
