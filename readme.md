@@ -1,4 +1,4 @@
-<p align="center"><a href="https://blog.stevesensei.work" target="_blank" rel="noopener noreferrer"><img width="350" src="https://moss-1309278520.cos.ap-shanghai.myqcloud.com/nap_plana.png" alt=""></a></p>
+<p align="center"><a href="https://blog.stevesensei.work" target="_blank" rel="noopener noreferrer"><img width="350" height="350" src="https://i.imgur.com/p7pBCgg.png" alt=""></a></p>
 
 <div align="center">
 
@@ -6,9 +6,11 @@
 
 _Yet Another NapCat Framework SDK for .NET_
 
+_logo artwork by: [芋泥雪糕喵](https://www.mihuashi.com/profiles/155732?role=painter)_
+
 > 待機中、解決しなければならない作業が多数存在しています。
-> 
-> A new logo now in progress...
+
+
 
 | Nuget                                                 | License | Workflow                                                                                                | Name Inspired By                                    | Github                                                                     |
 |-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------------------------------|

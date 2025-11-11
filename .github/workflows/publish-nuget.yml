@@ -1,11 +1,10 @@
 ﻿name: publish-nuget
-run-name: ${{ github.actor }} is publishing a nuget package
+run-name: 发布nuget包，版本：${{ github.ref_name }}
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    tags:
+      - "*"
   
 jobs:
   publish-nuget-packages:
@@ -21,10 +20,21 @@ jobs:
           dotnet-version: 9.0.x
       - name: Restore dependencies
         run: dotnet restore ./NapPlana.Net.Core/NapPlana.Net.Core.csproj
+      - name: Determine package version from tag
+        id: version
+        shell: bash
+        run: |
+          ref="${GITHUB_REF_NAME}"
+          # Strip leading 'v' if present (e.g., v1.2.3 -> 1.2.3)
+          if [[ "$ref" == v* ]]; then
+            ref="${ref#v}"
+          fi
+          echo "PACKAGE_VERSION=$ref" >> "$GITHUB_ENV"
+          echo "package_version=$ref" >> "$GITHUB_OUTPUT"
       - name: Build
         run: dotnet build --no-restore -c Release ./NapPlana.Net.Core/NapPlana.Net.Core.csproj
       - name: Create the package
-        run: dotnet pack -c Release ./NapPlana.Net.Core/NapPlana.Net.Core.csproj
+        run: dotnet pack --no-build -c Release -p:PackageVersion=${{ env.PACKAGE_VERSION }} ./NapPlana.Net.Core/NapPlana.Net.Core.csproj
       - name: Add nuget source
         run: dotnet nuget add source --username stevesensei --password ${{ secrets.TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/stevesensei/index.json"
       - name: Publish the package to Github Packages
