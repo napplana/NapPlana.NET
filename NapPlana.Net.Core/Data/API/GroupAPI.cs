@@ -58,3 +58,15 @@ public class PokeMessageSend
     [JsonPropertyName("target_id")]
     public string TargetId { get; set; } = string.Empty;
 }
+
+/// <summary>
+/// 撤回消息
+/// </summary>
+public class GroupMessageDelete
+{
+    /// <summary>
+    /// 消息ID
+    /// </summary>
+    [JsonPropertyName("message_id")]
+    public long MessageId { get; set; } = 0;
+}

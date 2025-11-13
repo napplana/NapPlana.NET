@@ -44,7 +44,7 @@ public class WebSocketMessageReceiverPlugin: PluginBase, IWebSocketReceivedPlugi
                             BotEventHandler.LogReceived(LogLevel.Error,$"动作失败: {actionResponse.RetCode} - {actionResponse.Message}");
                         }
                         // 将动作响应加入可消费队列
-                        _ = ApiHandler.AddResponseAsync(actionResponse);
+                        ApiHandler.Dispatch(actionResponse);
                         // 不向事件解析器传递动作响应文本
                         return EasyTask.CompletedTask;
                     }

@@ -6,7 +6,7 @@ namespace NapPlana.Core.Bot;
 /// <summary>
 /// 机器人创建工厂
 /// </summary>
-public class BotFactory
+public class PlanaBotFactory
 {
     private string _ip = string.Empty;
     private int _port = 0;
@@ -14,20 +14,20 @@ public class BotFactory
     private BotConnectionType _connectionType = BotConnectionType.WebSocketClient;
     private long _selfId;
 
-    private BotFactory() {}
+    private PlanaBotFactory() {}
 
     /// <summary>
     /// 创建机器人工厂实例
     /// </summary>
     /// <returns>工厂实例</returns>
-    public static BotFactory Create() => new BotFactory();
+    public static PlanaBotFactory Create() => new PlanaBotFactory();
 
     /// <summary>
     /// 设置访问IP
     /// </summary>
     /// <param name="ip">ip字段</param>
     /// <returns>工厂实例</returns>
-    public BotFactory SetIp(string ip)
+    public PlanaBotFactory SetIp(string ip)
     {
         _ip = ip;
         return this;
@@ -38,7 +38,7 @@ public class BotFactory
     /// </summary>
     /// <param name="selfId">QQ号</param>
     /// <returns>工厂实例</returns>
-    public BotFactory SetSelfId(long selfId)
+    public PlanaBotFactory SetSelfId(long selfId)
     {
         _selfId = selfId;
         return this;
@@ -49,7 +49,7 @@ public class BotFactory
     /// </summary>
     /// <param name="port">端口号</param>
     /// <returns>工厂实例</returns>
-    public BotFactory SetPort(int port)
+    public PlanaBotFactory SetPort(int port)
     {
         _port = port;
         return this;
@@ -60,7 +60,7 @@ public class BotFactory
     /// </summary>
     /// <param name="token">token，没有可不设置</param>
     /// <returns>工厂实例</returns>
-    public BotFactory SetToken(string? token)
+    public PlanaBotFactory SetToken(string? token)
     {
         _token = token;
         return this;
@@ -70,7 +70,7 @@ public class BotFactory
     /// </summary>
     /// <param name="connectionType">连接方式</param>
     /// <returns>工厂实例</returns>
-    public BotFactory SetConnectionType(BotConnectionType connectionType)
+    public PlanaBotFactory SetConnectionType(BotConnectionType connectionType)
     {
         _connectionType = connectionType;
         return this;

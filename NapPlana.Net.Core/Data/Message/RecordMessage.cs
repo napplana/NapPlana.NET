@@ -8,7 +8,7 @@ namespace NapPlana.Core.Data.Message;
 public class RecordMessageData : MessageDataBase
 {
     /// <summary>
-    /// 文件。
+    /// 文件,收发必填。
     /// </summary>
     [JsonPropertyName("file")] public string File { get; set; } = string.Empty;
     /// <summary>

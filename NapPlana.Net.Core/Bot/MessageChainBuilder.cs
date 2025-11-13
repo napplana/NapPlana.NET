@@ -124,4 +124,18 @@ public class MessageChainBuilder
         });
         return this;
     }
+
+    public MessageChainBuilder AddVoiceMessage(string voiceUrl)
+    {
+        if (string.IsNullOrWhiteSpace(voiceUrl)) return this;
+        _messages.Add(new RecordMessage()
+        {
+            MessageData = new RecordMessageData()
+            {
+                File = voiceUrl
+            },
+            MessageType = MessageDataType.Record
+        });
+        return this;
+    }
 }

@@ -20,7 +20,7 @@ var port = napCatSection.GetValue<int>("Port");
 var token = napCatSection.GetValue<string>("Token");
 var selfId = botSection.GetValue<long>("SelfId");
 
-var bot = BotFactory
+var bot = PlanaBotFactory
     .Create()
     .SetSelfId(selfId)// Your bot QQ ID
     .SetConnectionType(BotConnectionType.WebSocketClient)// Set connection type,only this mode is supported now
@@ -49,6 +49,9 @@ BotEventHandler.OnGroupPokeNoticeReceived += async (notice) =>
 
     await PokeBack.ExecuteAsyncGroup(bot, notice.GroupId.ToString(), notice.UserId.ToString());
 };
+
+// Initialize other examples
+NeteaseVoice.InitializeAsync(bot);
 
 // Graceful shutdown on Ctrl+C
 // Prevent the process from terminating immediately

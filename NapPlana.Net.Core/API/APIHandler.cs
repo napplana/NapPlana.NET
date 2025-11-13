@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using NapPlana.Core.Data;
 using NapPlana.Core.Data.Action;
+using NapPlana.Core.Data.API;
 using NapPlana.Core.Event.Handler;
 
 namespace NapPlana.Core.API;
@@ -11,29 +12,33 @@ namespace NapPlana.Core.API;
 /// </summary>
 public static class ApiHandler
 {
-    private static ConcurrentDictionary<string,ActionResponse> _responseDict = new();
+    private static readonly ConcurrentDictionary<string, TaskCompletionSource<ActionResponse>> Awaiters = new();
+
+    public static bool TryRegister(string echo, TaskCompletionSource<ActionResponse> tcs)
+        => Awaiters.TryAdd(echo, tcs);
+
+    public static bool TryRemove(string echo, out TaskCompletionSource<ActionResponse>? tcs)
+        => Awaiters.TryRemove(echo, out tcs);
     
-    /// <summary>
-    /// 将WS收到的消息加入缓冲区
-    /// </summary>
-    /// <param name="response">WS响应内容</param>
-    public static async Task AddResponseAsync(ActionResponse response)
+    public static void Dispatch(ActionResponse raw)
     {
-        if (!_responseDict.TryAdd(response.Echo, response))
+        if (string.IsNullOrEmpty(raw.Echo)) 
+            return;
+        if (!Awaiters.TryRemove(raw.Echo, out var tcs)) 
+            return;
+        try
         {
-            BotEventHandler.LogReceived(LogLevel.Warning, $"响应重复加入队列: {response.Echo}");
+            if (raw.RetCode != 0)
+            {
+                tcs.TrySetException(new InvalidOperationException($"API failed: {raw.RetCode} - {raw.Message}"));
+                return;
+            }
+            tcs.TrySetResult(raw);
         }
-        await Task.CompletedTask;
-    }
-    /// <summary>
-    /// 尝试从缓冲区取出响应
-    /// </summary>
-    /// <param name="echo">标识字段</param>
-    /// <param name="response">相应内容</param>
-    /// <returns>是否取出成功</returns>
-    public static bool TryConsume(string echo, out ActionResponse response)
-    {
-        return _responseDict.TryRemove(echo, out response);
+        catch (Exception ex)
+        {
+            tcs.TrySetException(ex);
+        }
     }
     
 }
