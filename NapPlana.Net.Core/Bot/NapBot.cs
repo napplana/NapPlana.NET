@@ -110,7 +110,20 @@ public class NapBot
         var res =  await SendMessageAsync<GroupMessageSendResponseData>(groupMessage,ApiActionType.SendGroupMsg);
         return res ?? throw new Exception("Failed to send group message.");
     }
-    
+
+    /// <summary>
+    /// 发送私聊消息
+    /// </summary>
+    /// <param name="privateMessage">请求</param>
+    /// <param name="timeoutSeconds">自定义超时时间</param>
+    /// <returns>响应</returns>
+    /// <exception cref="ArgumentNullException">传参错误</exception>
+    public async Task<PrivateMessageSendResponseData> SendPrivateMessageAsync(PrivateMessageSend privateMessage, int timeoutSeconds = 15) {
+        if (privateMessage is null) throw new ArgumentNullException(nameof(privateMessage));
+        var res = await SendMessageAsync<PrivateMessageSendResponseData>(privateMessage, ApiActionType.SendPrivateMsg);
+        return res ?? throw new Exception("Failed to send private message.");
+    }
+
     /// <summary>
     /// 发送戳一戳消息
     /// </summary>
