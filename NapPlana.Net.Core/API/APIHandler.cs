@@ -14,12 +14,28 @@ public static class ApiHandler
 {
     private static readonly ConcurrentDictionary<string, TaskCompletionSource<ActionResponse>> Awaiters = new();
 
+    /// <summary>
+    /// 添加待接收响应
+    /// </summary>
+    /// <param name="echo">标识符</param>
+    /// <param name="tcs">tcs</param>
+    /// <returns>是否成功</returns>
     public static bool TryRegister(string echo, TaskCompletionSource<ActionResponse> tcs)
         => Awaiters.TryAdd(echo, tcs);
 
+    /// <summary>
+    /// 响应接收到之后移除
+    /// </summary>
+    /// <param name="echo">标识符</param>
+    /// <param name="tcs">tcs</param>
+    /// <returns>是否成功</returns>
     public static bool TryRemove(string echo, out TaskCompletionSource<ActionResponse>? tcs)
         => Awaiters.TryRemove(echo, out tcs);
     
+    /// <summary>
+    /// 接收响应
+    /// </summary>
+    /// <param name="raw">响应消息</param>
     public static void Dispatch(ActionResponse raw)
     {
         if (string.IsNullOrEmpty(raw.Echo)) 
