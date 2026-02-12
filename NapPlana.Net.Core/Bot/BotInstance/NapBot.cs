@@ -4,19 +4,29 @@ using NapPlana.Core.Data;
 using NapPlana.Core.Data.Action;
 using NapPlana.Core.Data.API;
 
-namespace NapPlana.Core.Bot;
+namespace NapPlana.Core.Bot.BotInstance;
 
 /// <summary>
 /// 机器人主体
 /// </summary>
-public class NapBot
+public class NapBot: INapBot
 {
     private ConnectionBase _connection;
     /// <summary>
     /// QQ号
     /// </summary>
-    public  long SelfId = 0;
-    
+    public long SelfId { get; set; } = 0;
+
+    public async Task StartAsync(CancellationToken cancellationToken = default)
+    {
+        await _connection.InitializeAsync();
+    }
+
+    public async Task StopAsync(CancellationToken cancellationToken = default)
+    {
+        await _connection.ShutdownAsync();
+    }
+
     /// <summary>
     /// 创建实例
     /// </summary>
@@ -47,17 +57,6 @@ public class NapBot
         _connection = connection;
         return this;
     }
-
-    /// <summary>
-    /// 异步启动机器人
-    /// </summary>
-    /// <returns></returns>
-    public Task StartAsync() => _connection.InitializeAsync();
-    /// <summary>
-    /// 异步终止机器人
-    /// </summary>
-    /// <returns></returns>
-    public Task StopAsync() => _connection.ShutdownAsync();
     
     /// <summary>
     /// 发送消息的统一处理方法
@@ -79,13 +78,13 @@ public class NapBot
 
         var tcs = new TaskCompletionSource<ActionResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
 
-        if (!ApiHandler.TryRegister(echo, tcs))
+        if (!BotApiHandler.TryRegister(echo, tcs))
             throw new InvalidOperationException("Echo register failed.");
 
         //超时
         cts.Token.Register(() =>
         {
-            if (ApiHandler.TryRemove(echo, out var pending))
+            if (BotApiHandler.TryRemove(echo, out var pending))
                 pending?.TrySetException(new TimeoutException($"Timed out waiting for {typeof(T)} response."));
         });
 

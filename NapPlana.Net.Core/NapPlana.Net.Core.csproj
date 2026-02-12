@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <Folder Include="Connections\Http\" />
+      <Folder Include="DependencyInjection\" />
     </ItemGroup>
 
     <ItemGroup>

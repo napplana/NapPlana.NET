@@ -1,4 +1,5 @@
-﻿using NapPlana.Core.Connections.WebSocket;
+﻿using NapPlana.Core.Bot.BotInstance;
+using NapPlana.Core.Connections.WebSocket;
 using NapPlana.Core.Data;
 
 namespace NapPlana.Core.Bot;
