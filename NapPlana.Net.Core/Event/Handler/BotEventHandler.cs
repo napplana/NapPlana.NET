@@ -20,7 +20,7 @@ public static class BotEventHandler
     /// 设置事件处理器实例 (供DI使用)
     /// </summary>
     /// <param name="instance">事件处理器实例</param>
-    internal static void SetInstance(IEventHandler instance)
+    public static void SetInstance(IEventHandler instance)
     {
         _instance = instance ?? throw new ArgumentNullException(nameof(instance));
     }
