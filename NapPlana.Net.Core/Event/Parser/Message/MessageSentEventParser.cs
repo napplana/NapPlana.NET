@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using NapPlana.Core.Data;
 using NapPlana.Core.Data.Event.Message;
 using NapPlana.Core.Data.Message;
@@ -32,7 +32,7 @@ public class MessageSentEventParser(IEventHandler handler) : MessageEventParser(
                 privateMsg.ParseEvent(jsonEventData);
                 return;
             case MessageType.Group:
-                BotEventHandler.MessageSentGroup(ev);
+                handler.MessageSentGroup(ev);
                 break;
         }
         
