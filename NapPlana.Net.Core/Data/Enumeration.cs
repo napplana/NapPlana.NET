@@ -789,7 +789,7 @@ public enum ApiActionType
     /// 贴表情
     /// </summary>
     [JsonPropertyName("set_msg_emoji_like")]
-    SetMsgEmojiLike = 39
+    SetMsgEmojiLike = 39,
     
     /// <summary>
     /// 获取文件信息。
