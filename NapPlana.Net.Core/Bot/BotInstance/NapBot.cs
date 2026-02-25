@@ -174,6 +174,14 @@ public class NapBot: INapBot
     }
 
     /// <summary>
+    /// 贴表情
+    /// </summary>
+    /// <param name="message">消息结构</param>
+    public async Task SetMsgEmojiLikeAsync(MsgEmojiLikeSend message)
+    {
+        if (message is null) throw new ArgumentNullException(nameof(message));
+        await SendMessageAsync<ResponseDataBase>(message, ApiActionType.SetMsgEmojiLike);
+    }
     /// 获取文件信息
     /// </summary>
     /// <param name="request">请求参数</param>

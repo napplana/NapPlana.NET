@@ -784,24 +784,30 @@ public enum ApiActionType
     /// </summary>
     [JsonPropertyName("send_forward_msg")]
     SendForwardMsg = 38,
+
+    /// <summary>
+    /// 贴表情
+    /// </summary>
+    [JsonPropertyName("set_msg_emoji_like")]
+    SetMsgEmojiLike = 39
     
     /// <summary>
     /// 获取文件信息。
     /// </summary>
     [JsonPropertyName("get_file")]
-    GetFile = 39,
+    GetFile = 40,
     
     /// <summary>
     /// 获取群文件下载链接。
     /// </summary>
     [JsonPropertyName("get_group_file_url")]
-    GetGroupFileUrl = 40,
+    GetGroupFileUrl = 41,
     
     /// <summary>
     /// 获取私聊文件下载链接。
     /// </summary>
     [JsonPropertyName("get_private_file_url")]
-    GetPrivateFileUrl = 41
+    GetPrivateFileUrl = 42
 }
 
 /// <summary>

@@ -50,6 +50,12 @@ public interface INapBot
     /// 发送私聊合并转发消息
     /// </summary>
     Task<ForwardMessageSendResponseData> SendPrivateForwardMessageAsync(PrivateForwardMessageSend message, int timeoutSeconds = 15);
+    
+    /// <summary>
+    /// 贴表情
+    /// </summary>
+    /// <param name="message">消息结构</param>
+    Task SetMsgEmojiLikeAsync(MsgEmojiLikeSend message);
     /// <summary>
     /// 获取文件信息
     /// </summary>

@@ -70,3 +70,27 @@ public class GroupMessageDelete
     [JsonPropertyName("message_id")]
     public long MessageId { get; set; } = 0;
 }
+
+/// <summary>
+/// 贴表情
+/// </summary>
+public class MsgEmojiLikeSend
+{
+    /// <summary>
+    /// 消息ID
+    /// </summary>
+    [JsonPropertyName("message_id")]
+    public long MessageId { get; set; }
+
+    /// <summary>
+    /// 表情ID
+    /// </summary>
+    [JsonPropertyName("emoji_id")]
+    public string EmojiId { get; set; } = string.Empty;
+
+    /// <summary>
+    /// 是否设置，false为取消
+    /// </summary>
+    [JsonPropertyName("set")]
+    public bool Set { get; set; } = true;
+}

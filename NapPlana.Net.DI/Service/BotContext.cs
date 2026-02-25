@@ -146,6 +146,17 @@ public class BotContext : INapBot, IDisposable
     }
 
     /// <summary>
+    /// 贴表情
+    /// </summary>
+    public async Task SetMsgEmojiLikeAsync(MsgEmojiLikeSend message)
+    {
+        if (message is null)
+            throw new ArgumentNullException(nameof(message));
+
+        await SendMessageAsync<ResponseDataBase>(message, ApiActionType.SetMsgEmojiLike);
+    }
+
+    /// <summary>
     /// 释放资源
     /// </summary>
     public void Dispose()
